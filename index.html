@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayStation Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+<header>
+    
+    <div id="user-container">
+        <button class="login-btn" id="login-button" onclick="window.location.href='login.html'">Войти</button>
+        <span id="user-name" style="display: none;"></span>
+        <button id="logout-button" style="display: none;" onclick="logout()">Выйти</button>
+    </div>
+
+</header>
+
+<script src="auth.js"></script>
+
+
+<section id="favorites">
+    <h2>Избранное</h2>
+    <div id="favorites-list"></div>
+</section>
+
+<header>
+    <button id="menu-toggle">☰</button>
+    <h1>🎮 PlayStation Store</h1>
+    <button id="theme-toggle">🌙</button>
+</header>
+
+<nav id="sidebar">
+    <ul>
+        <li><a href="#">Корзина</a></li>
+        <li><a href="#">Избранное</a></li>
+    </ul>
+</nav>
+
+<main>
+    <h2>Каталог товаров</h2>
+
+    <section class="category">
+        <h3>🎮 Приставки</h3>
+        <div class="carousel-container">
+            <button class="scroll-btn left">&lt;</button>
+            <div class="carousel">
+                <div class="items">
+                    <div class="item">
+    <img src="images/ps4pro.png" alt="ps4pro">
+    <p class="product-name">PS4 Pro</p>
+    <p class="product-price">190 000₸</p>
+<button class="buy-btn">Купить</button>
+<p class="description">Компактная версия PS4 с теми же возможностями и стильным дизайном.</p>
+    <button class="fav-btn" data-id="ps4pro">❤️</button>
+</div>
+
+<div class="item">
+    <img src="images/ps4.png" alt="ps4">
+    <p class="product-name">PS4 Slim</p>
+    <p class="product-price">150 000₸</p>
+<button class="buy-btn">Купить</button>
+<p class="description">Улучшенная версия PS4 с поддержкой 4K и повышенной производительностью.</p>
+    <button class="fav-btn" data-id="ps4">❤️</button>
+</div>
+
+<div class="overlay"></div> <!-- Размытие фона -->
+<div class="item">
+    <img src="images/ps5.png" alt="ps5">
+    <p class="product-name">PS5 Standard</p>
+    <p class="product-price">280 000₸</p>
+<button class="buy-btn">Купить</button>
+    <p class="description">Новая консоль с мощным железом и поддержкой 4K.</p>
+<button class="fav-btn" data-id="ps5">❤️</button>
+</div>
+
+<div class="item">
+    <img src="images/ps5dig.png" alt="ps5dig">
+    <p class="product-name">PS5 Digital</p>
+    <p class="product-price">250 000₸</p>
+<button class="buy-btn">Купить</button>
+<p class="description">Цифровая версия PS5 без дисковода, созданная для любителей цифровых игр.</p>
+    <button class="fav-btn" data-id="ps5dig">❤️</button>
+</div>
+
+<div class="item">
+    <img src="images/ps5spider.png" alt="ps5spider">
+    <p class="product-name">PS5 Spider-Man 2 Edition</p>
+    <p class="product-price">300 000₸</p>
+<button class="buy-btn">Купить</button>
+<p class="description">Лимитированное издание PS5 в стиле Spider-Man 2 с уникальным дизайном.</p>
+    <button class="fav-btn" data-id="ps5spider">❤️</button>
+</div>
+                </div>
+            </div>
+            <button class="scroll-btn right">&gt;</button>
+        </div>
+    </section>
+
+    <section class="category">
+        <h3>🎮 Джойстики</h3>
+        <div class="carousel-container">
+            <button class="scroll-btn left">&lt;</button>
+            <div class="carousel">
+                <div class="items">
+                    <div class="item">
+    <img src="images/psblack.png" alt="psblack">
+    <p class="product-name">DualShock 4 (Черный)</p>
+    <p class="product-price">29 990₸</p>
+<button class="buy-btn">Купить</button>
+<p class="description">Классический контроллер для PS4 с точным управлением и эргономичным дизайном.</p>
+    <button class="fav-btn" data-id="psblack">❤️</button>
+</div>
+
+<div class="item">
+    <img src="images/pswhite.png" alt="pswhite">
+    <p class="product-name">DualShock 4 (Белый)</p>
+    <p class="product-price">29 990₸</p>
+<button class="buy-btn">Купить</button>
+<p class="description">Стильная белая версия DualShock 4 с удобными триггерами и сенсорной панелью.</p>
+    <button class="fav-btn" data-id="pswhite">❤️</button>
+</div>
+
+<div class="item">
+    <img src="images/ps5white.png" alt="ps5white">
+    <p class="product-name">DualSense (Белый)</p>
+    <p class="product-price">34 990₸</p>
+<button class="buy-btn">Купить</button>
+<p class="description">Революционный контроллер для PS5 с тактильной отдачей и адаптивными триггерами.</p>
+    <button class="fav-btn" data-id="ps5white">❤️</button>
+</div>
+
+<div class="item">
+    <img src="images/ps5blue.png" alt="ps5blue">
+    <p class="product-name">DualSense (Синий)</p>
+    <p class="product-price">34 990₸</p>
+<button class="buy-btn">Купить</button>
+<p class="description">Яркий синий DualSense с инновационными функциями для максимального погружения в игры.</p>
+    <button class="fav-btn" data-id="ps5blue">❤️</button>
+</div>
+
+<div class="item">
+    <img src="images/dualspider.png" alt="dualspider">
+    <p class="product-name">DualSense Spider-Man Edition</p>
+    <p class="product-price">39 990₸</p>
+<button class="buy-btn">Купить</button>
+<p class="description">Ограниченное издание в стиле Spider-Man 2 с эксклюзивным дизайном и теми же технологиями DualSense.</p>
+    <button class="fav-btn" data-id="dualspider">❤️</button>
+</div>
+
+                </div>
+            </div>
+            <button class="scroll-btn right">&gt;</button>
+        </div>
+    </section>
+
+    <section class="category">
+        <h3>🎮 Игры</h3>
+        <div class="carousel-container">
+            <button class="scroll-btn left">&lt;</button>
+            <div class="carousel">
+                <div class="items">
+                    <div class="item">
+    <img src="images/UFC 4.png" alt="UFC 4">
+    <p class="product-name">UFC 4</p>
+    <p class="product-price">24 990₸</p>
+<button class="buy-btn">Купить</button>
+    <p class="description">Реалистичный симулятор MMA с улучшенной анимацией и динамическими боями.</p>
+    <button class="fav-btn" data-id="UFC 4">❤️</button>
+</div>
+
+<div class="item">
+    <img src="images/UFC 5.png" alt="UFC 5">
+    <p class="product-name">UFC 5</p>
+    <p class="product-price">27 990₸</p>
+<button class="buy-btn">Купить</button>
+    <p class="description">Последняя версия UFC с реалистичной графикой и новыми механиками боя.</p>
+    <button class="fav-btn" data-id="UFC 5">❤️</button>
+</div>
+
+<div class="item">
+    <img src="images/Fifa 23.png" alt="FIFA 23">
+    <p class="product-name">FIFA 23</p>
+    <p class="product-price">22 990₸</p>
+<button class="buy-btn">Купить</button>
+    <p class="description">Футбольный симулятор с обновленными командами и улучшенным геймплеем.</p>
+    <button class="fav-btn" data-id="Fifa 23">❤️</button>
+</div>
+
+<div class="item">
+    <img src="images/EA SPORTS FC™ 24.png" alt="EA SPORTS FC™ 24">
+    <p class="product-name">EA SPORTS FC™ 24</p>
+    <p class="product-price">25 990₸</p>
+<button class="buy-btn">Купить</button>
+    <p class="description">Перезапуск культовой футбольной серии с улучшенной физикой мяча.</p>
+    <button class="fav-btn" data-id="EA SPORTS FC™ 24">❤️</button>
+</div>
+
+<div class="item">
+    <img src="images/EA SPORTS FC™ 25.png" alt="EA SPORTS FC™ 25">
+    <p class="product-name">EA SPORTS FC™ 25</p>
+    <p class="product-price">28 990₸</p>
+<button class="buy-btn">Купить</button>
+    <p class="description">Последняя версия футбольного симулятора с новыми командами и режимами.</p>
+    <button class="fav-btn" data-id="EA SPORTS FC™ 25">❤️</button>
+</div>
+
+<div class="item">
+    <img src="images/Mortal Kombat X.png" alt="Mortal Kombat X">
+    <p class="product-name">Mortal Kombat X</p>
+    <p class="product-price">19 990₸</p>
+<button class="buy-btn">Купить</button>
+    <p class="description">Динамичные бои с культовыми персонажами и фирменными фаталити.</p>
+    <button class="fav-btn" data-id="Mortal Kombat X">❤️</button>
+</div>
+
+<div class="item">
+    <img src="images/Mortal Kombat 11.png" alt="Mortal Kombat 11">
+    <p class="product-name">Mortal Kombat 11</p>
+    <p class="product-price">21 990₸</p>
+<button class="buy-btn">Купить</button>
+    <p class="description">Новые персонажи, механики и сюжетный режим в легендарной файтинг-серии.</p>
+    <button class="fav-btn" data-id="Mortal Kombat 11">❤️</button>
+</div>
+
+<div class="item">
+    <img src="images/Mortal Kombat 1(2024).png" alt="Mortal Kombat 1 (2024)">
+    <p class="product-name">Mortal Kombat 1 (2024)</p>
+    <p class="product-price">29 990₸</p>
+<button class="buy-btn">Купить</button>
+    <p class="description">Полный перезапуск серии с новым сюжетом и революционным геймплеем.</p>
+    <button class="fav-btn" data-id="Mortal Kombat 1 (2024)">❤️</button>
+</div>
+
+<div class="item">
+    <img src="images/God of War (2018).png" alt="God of War (2018)">
+    <p class="product-name">God of War (2018)</p>
+    <p class="product-price">24 990₸</p>
+<button class="buy-btn">Купить</button>
+    <p class="description">Эпическое приключение Кратоса в скандинавском мире.</p>
+    <button class="fav-btn" data-id="God of War (2018)">❤️</button>
+</div>
+
+<div class="item">
+    <img src="images/God of War  Рагнарек.png" alt="God of War: Рагнарёк">
+    <p class="product-name">God of War: Рагнарёк</p>
+    <p class="product-price">27 990₸</p>
+<button class="buy-btn">Купить</button>
+    <p class="description">Продолжение с эпическими сражениями и глубоким сюжетом.</p>
+    <button class="fav-btn" data-id="God of War: Рагнарёк">❤️</button>
+</div>
+
+<div class="item">
+    <img src="images/Grand Theft Auto V.png" alt="GTA V">
+    <p class="product-name">Grand Theft Auto V</p>
+    <p class="product-price">19 990₸</p>
+<button class="buy-btn">Купить</button>
+    <p class="description">Открытый мир, криминальный сюжет и огромные возможности для игроков.</p>
+    <button class="fav-btn" data-id="Grand Theft Auto V">❤️</button>
+</div>
+
+<div class="item">
+    <img src="images/The Last of Us​.png" alt="The Last of Us">
+    <p class="product-name">The Last of Us</p>
+    <p class="product-price">22 990₸</p>
+<button class="buy-btn">Купить</button>
+    <p class="description">Эмоциональное выживание в постапокалиптическом мире.</p>
+    <button class="fav-btn" data-id="The Last of Us">❤️</button>
+</div>
+
+<div class="item">
+    <img src="images/The Last of Us Part II.png" alt="The Last of Us Part II">
+    <p class="product-name">The Last of Us Part II</p>
+    <p class="product-price">26 990₸</p>
+<button class="buy-btn">Купить</button>
+    <p class="description">Продолжение с мрачным сюжетом и глубокими эмоциями.</p>
+    <button class="fav-btn" data-id="The Last of Us Part II">❤️</button>
+</div>
+
+<div class="item">
+    <img src="images/Miles Morales.png" alt="Spider-Man: Miles Morales">
+    <p class="product-name">Spider-Man: Miles Morales</p>
+    <p class="product-price">27 990₸</p>
+<button class="buy-btn">Купить</button>
+    <p class="description">Новая глава приключений Человека-паука с уникальными способностями Майлза.</p>
+    <button class="fav-btn" data-id="Spider-Man: Miles Morales">❤️</button>
+</div>
+
+<div class="item">
+    <img src="images/spider man 1.png" alt="Spider-Man Insomniac (1)">
+    <p class="product-name">Spider-Man Insomniac (1 часть)</p>
+    <p class="product-price">30 990₸</p>
+<button class="buy-btn">Купить</button>
+    <p class="description">Захватывающая история Питера Паркера в открытом мире Нью-Йорка.</p>
+    <button class="fav-btn" data-id="Spider-Man Insomniac (1 часть)">❤️</button>
+</div>
+
+<div class="item">
+    <img src="images/spider man 2.png" alt="Spider-Man Insomniac (2)">
+    <p class="product-name">Spider-Man Insomniac (2 часть)</p>
+    <p class="product-price">32 990₸</p>
+<button class="buy-btn">Купить</button>
+    <p class="description">Продолжение с возможностью игры за Питера и Майлза, новыми злодеями и улучшенной механикой боя.</p>
+    <button class="fav-btn" data-id="Spider-Man Insomniac (2 часть)">❤️</button>
+</div>
+
+
+                </div>
+            </div>
+            <button class="scroll-btn right">&gt;</button>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2025 PlayStation Store</p>
+</footer>
+
+<script src="script.js"></script>
+<script src="payment.js"></script>
+
+
+<section class="ps5-info">
+    <div class="ps5-container">
+        <img src="images/ps555.png" alt="PS5" class="ps5-image">
+        <div class="ps5-text">
+            <h2>Почему <span>PS5?</span></h2>
+            <p>PlayStation 5 – это новая эра игрового мира. Насладись невероятной скоростью, фотореалистичной графикой и новыми игровыми возможностями.</p>
+            <ul>
+                <li>⚡ **Молниеносный SSD** – загрузка игр за секунды.</li>
+                <li>🎮 **DualSense** – передовые тактильные ощущения.</li>
+                <li>🌟 **Реалистичная графика** – 4K, HDR, Ray Tracing.</li>
+                <li>🎧 **3D-звук** – полное погружение в игру.</li>
+            </ul>
+            <button class="ps5-btn">Узнать больше</button>
+        </div>
+    </div>
+</section>
+
+<section class="ps5-promo">
+    <h2>Почему стоит выбрать PS5?</h2>
+    <p>Мощная графика, молниеносная загрузка, инновационный DualSense и невероятные игры нового поколения.</p>
+    <div class="video-container">
+        <iframe width="100%" height="450" src="https://www.youtube.com/embed/RkC0l4iekYo" 
+        title="PlayStation 5 Trailer" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen></iframe>
+    </div>
+</section>
+
+<!-- Кнопка наверх -->
+<div class="to-top" onclick="scrollToTop()">↑</div>
+
+<footer>
+    <div class="footer-container">
+        <p>© 2025 PlayStation Store. Все права защищены.</p>
+        <div class="footer-links">
+            <a href="#">Политика конфиденциальности</a>
+            <a href="#">Условия использования</a>
+            <a href="#">Связаться с нами</a>
+        </div>
+        <div class="footer-contact">
+            <p>Call-центр: +7 777 814 5056 | Email: <a href="mailto:T_abilay12@mail.ru">T_abilay12@mail.ru</a></p>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/67ff867a3c99ab190c27fbc4/1iov2ak1k';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+</html>
